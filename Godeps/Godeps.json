@@ -1,0 +1,11 @@
+{
+	"ImportPath": "github.com/yarg/dongo",
+	"GoVersion": "go1.3.2",
+	"Deps": [
+		{
+			"ImportPath": "github.com/flosch/pongo2",
+			"Comment": "v1.0-rc1-82-gbff5f59",
+			"Rev": "bff5f59f0e25eb8a51256fe0ad4b99d76e1f6152"
+		}
+	]
+}

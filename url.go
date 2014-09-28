@@ -47,3 +47,12 @@ func ServeView(name, path string, handler func(writer http.ResponseWriter, reque
 	views[name] = path
 	http.HandleFunc(path, handler)
 }
+
+func ServeTemplateView(name, path, templateFileName string, handler func(request *http.Request) pongo2.Context) {
+	template := pongo2.Must(pongo2.FromFile(templateFileName))
+
+	ServeView(name, path, func(writer http.ResponseWriter, request *http.Request) {
+			context := handler(request)
+			template.ExecuteWriter(context, writer)
+		})
+}
